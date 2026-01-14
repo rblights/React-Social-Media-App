@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import { GoogleLogin } from '@react-oauth/google';
-import Home from './components/Home';
+import Home from './container/Home';
 import Login from './components/Login';
 
 function App() {
