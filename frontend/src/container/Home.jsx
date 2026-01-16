@@ -7,6 +7,7 @@ import { client } from '../client';
 import Pins from './Pins';
 import { userQuery } from '../utils/data';
 import logo from '../assets/logo.png';
+import { fetchUser } from '../utils/fetchUser';
 
 
 const Home = () => {
@@ -14,7 +15,7 @@ const Home = () => {
     const scrollRef = useRef(null);
     const [user, setUser] = useState(null);
 
-    const userInfo = localStorage.getItem('user') !== 'undefined' ? JSON.parse(localStorage.getItem('user')) : localStorage.clear();
+    const userInfo = fetchUser();
     //console.log(userInfo)
     //console.log(userInfo?.sub)
 

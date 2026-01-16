@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-const CreatePin = () => {
+const CreatePin = ({ user }) => {
     return (
         <div>
             CreatePin
