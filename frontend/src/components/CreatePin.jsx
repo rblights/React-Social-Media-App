@@ -47,11 +47,11 @@ const CreatePin = ({ user }) => {
             about,
             destination,
             image: {
-            _type: 'image',
-            asset: {
-                _type: 'reference',
-                _ref: imageAsset?._id,
-            },
+                _type: 'image',
+                asset: {
+                    _type: 'reference',
+                    _ref: imageAsset?._id,
+                },
             },
             userId: user._id,
             postedBy: {
@@ -64,14 +64,9 @@ const CreatePin = ({ user }) => {
             navigate('/');
         });
         } else {
-        setFields(true);
+            setFields(true);
 
-        setTimeout(
-            () => {
-            setFields(false);
-            },
-            2000,
-        );
+            setTimeout(() => setFields(false), 2000);
         }
     };
 

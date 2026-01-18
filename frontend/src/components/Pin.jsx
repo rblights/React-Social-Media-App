@@ -93,7 +93,7 @@ const Pin = ({ pin: {postedBy, image, _id, destination, save = [] }}) => {
                             {destination && (
                                 <a onClick={(e) => e.stopPropagation()} href={destination} target="blank" rel="noreferrer" className="bg-white flex-center gap-2 text-black font-bold p-2 pl-4 pr-4 rounded-full opacity-25 hover:opacity-100 hover:shadow-md">
                                     <BsFillArrowUpRightCircleFill />
-                                    {destination.length > 40 ? destination.slice(12, 40) : destination.slice(12)}
+                                    {destination.length > 15 ? `${destination.slice(0, 15)}...` : destination}
                                 </a>
                             )}
                             {postedBy?._id === userInfo.sub && (
@@ -111,7 +111,7 @@ const Pin = ({ pin: {postedBy, image, _id, destination, save = [] }}) => {
                     </div>
                 )}
             </div>
-            <Link to={`user-profile/${postedBy?._id}`} className="flex gap-2 mt-2 items-center">
+            <Link to={`/user-profile/${postedBy?._id}`} className="flex gap-2 mt-2 items-center">
                 <img src={postedBy?.image} alt="user-profile" className="w-8 h-8 rounded-full object-cover"/>
                 <p>{postedBy?.userName}</p>
             </Link>
