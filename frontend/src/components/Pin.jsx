@@ -89,7 +89,7 @@ const Pin = ({ pin: {postedBy, image, _id, destination, save = [] }}) => {
                                 </button>
                             )}
                         </div>
-                        <div className="flex justify-betweeen items-center gap-2 w-full">
+                        <div className="flex justify-between items-center gap-2 w-full">
                             {destination && (
                                 <a onClick={(e) => e.stopPropagation()} href={destination} target="blank" rel="noreferrer" className="bg-white flex-center gap-2 text-black font-bold p-2 pl-4 pr-4 rounded-full opacity-25 hover:opacity-100 hover:shadow-md">
                                     <BsFillArrowUpRightCircleFill />
