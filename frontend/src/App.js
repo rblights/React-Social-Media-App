@@ -1,11 +1,19 @@
-import logo from './logo.svg';
+import React, { useEffect } from 'react';
 import './App.css';
 import { Routes, Route, useNavigate } from 'react-router-dom';
-import { GoogleLogin } from '@react-oauth/google';
 import Home from './container/Home';
 import Login from './components/Login';
+import { fetchUser } from './utils/fetchUser';
 
 function App() {
+  const navigate = useNavigate();
+
+  useEffect (() => {
+    const user = fetchUser
+
+    if(!user) navigate('/login');
+  }, [])
+
   return (
     <Routes>
       <Route path="login" element={<Login />}/>
