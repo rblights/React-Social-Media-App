@@ -8,11 +8,16 @@ import { fetchUser } from './utils/fetchUser';
 function App() {
   const navigate = useNavigate();
 
-  useEffect (() => {
-    const user = fetchUser
+  useEffect(() => {
+    const checkUser = async () => {
+      const user = await fetchUser();
+      if (!user && window.location.pathname !== '/login') {
+        navigate('/login');
+      }
+  };
 
-    if(!user) navigate('/login');
-  }, [])
+  checkUser();
+}, []);
 
   return (
     <Routes>
