@@ -14,10 +14,10 @@ function App() {
       if (!user && window.location.pathname !== '/login') {
         navigate('/login');
       }
-  };
+    };
 
-  checkUser();
-}, []);
+    checkUser();
+  }, []);
 
   return (
     <Routes>
